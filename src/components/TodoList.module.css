@@ -1,0 +1,22 @@
+.todolist {
+  margin-top: 4rem;
+}
+
+@media (max-width: 768px) {
+  .todolist {
+    margin-top: 2.5rem;
+  }
+}
+
+.todolist header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.todolist section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1.5rem;
+}

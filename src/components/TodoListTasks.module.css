@@ -1,0 +1,91 @@
+.todoListTasks {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  list-style: none;
+}
+
+.todoListTasks li {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 1rem;
+  gap: 0.75rem;
+  background: var(--gray-500);
+  border: 1px solid var(--gray-400);
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.06);
+  border-radius: 8px;
+  transition: border-color 0.3s linear;
+}
+
+.todoListTasks li + li {
+  margin-top: 0.75rem;
+}
+
+.todoListTasks li span {
+  flex-grow: 1;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.4;
+  color: var(--gray-100);
+  transition: color 0.3s linear;
+}
+
+.todoListTasks li div {
+  position: relative;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.todoListTasks div input {
+  position: relative;
+  z-index: -1;
+  opacity: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.todoListTasks div label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent url(../assets/icon-uncheck.svg) no-repeat 0 0;
+  background-size: cover;
+  cursor: pointer;
+}
+
+.todoListTasks div input:checked + label {
+  background-image: url(../assets/icon-checked.svg);
+}
+
+.todoListTasks button {
+  appearance: none;
+  display: block;
+  text-indent: -9999rem;
+  margin-left: 3rem;
+  border: 0 none;
+  padding: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  background: transparent url(../assets/icon-trash.svg) no-repeat center center;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .todoListTasks button {
+    margin-left: 1rem;
+    min-width: 1.5rem;
+  }
+}
+
+.todoListTasks li.taskCompleted {
+  border-color: var(--gray-500);
+}
+
+.todoListTasks li.taskCompleted span {
+  color: var(--gray-300);
+  text-decoration-line: line-through;
+}
